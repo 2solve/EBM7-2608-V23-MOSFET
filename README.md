@@ -63,7 +63,7 @@ Os blocos seguintes são os mesmos da fixa (lá estão explicados em detalhe); a
 |---|---|
 | Entrada 24 V | **ramo único** (28-09-2026, folha 2, nota 13): TVS **D200** SMA6J33A-Q (clamp real 53,3 V) → fusível **F1** CC12H750MA → díodo **D5** MBR1H100SF → +24V_ADC; **C13** 10 µF/100 V na entrada do U3 (Recom p.4 pede 3,3 µF/100 V se Vin > 50 V) |
 | Massas | GND_24V fundido em GND_ADC (folha 2, nota 7); DGND é a massa do processador |
-| Alimentação | **U3** R-78HB5.0 (+24V_ADC → 5 V), **U4** SPX3819 (+3.3V_ANA), **U8** MCP1824 (+3.3V do lado PLC), **U14** TL431 que grampeia o +3.3V_ANA a ~3,6 V (folha 3, nota 14) |
+| Alimentação | **U3** R-78HB5.0 (+24V_ADC → 5 V), **U4** SPX3819 (+3.3V_ANA), **U8** SPX3819 (+3.3V do lado PLC; era MCP1824 até 28-09), **U14** TL431 que grampeia o +3.3V_ANA a ~3,6 V (folha 3, nota 14) |
 | Barreira | **U5** ISO7141: separação de ruído, não isolamento (folha 4, nota 1); regra de 1,0 mm e keepouts no PCB |
 | ADC | **U6** AD7124-8, referência **U7** ADR4525 2,5 V no REFIN2 (folha 5, nota 1) |
 | Protector dos laços | **U9-U12** TPS26613, +Vs a 12 V de **U15** TPS7A4001 (folha 6, notas 9 e 16) |
@@ -123,6 +123,7 @@ bus e o TVS do borne) e um surto forte abre-o. Aqui:
 | **Ramo único de 24 V**: saem F2, D1 e C1; F1 + D5 alimentam o U3 e o +24V_ADC; +24V_REG deixa de existir | reunião: é tudo alimentado pelos mesmos 24 V, não eram canais independentes nem isolados; ganha-se espaço |
 | 100 nF fora do 24 V → TDK C1608X7R1H104K080AA (50 V), 24 peças; o C6 (+24V_ADC) fica GRM188R72A104KA35D (100 V) | 100 V estava sobredimensionado; pior caso fora do 24 V é o +12V_TPS a 31,7 V, por isso 50 V e não 25 V |
 | 1 µF → TDK C1608X7R1H105K080AB (50 V) nos quatro | havia dois MPN para a mesma função |
+| U8 MCP1824ST (SOT-223) → SPX3819 (SOT-23-5); faltam rotear 6 ligações do U8 | mesmo MPN do U4 (`alteracao_LDO_3V3_lado_PLC_2026-09-28.md`) |
 
 Condensadores: folha 2, nota 14. O catálogo TDK usado está em `Documentos_de_Referência-…/TDK_mlcc_commercial_general_en.pdf`
 (p.34 para o 100 nF, p.35 para o 1 µF).

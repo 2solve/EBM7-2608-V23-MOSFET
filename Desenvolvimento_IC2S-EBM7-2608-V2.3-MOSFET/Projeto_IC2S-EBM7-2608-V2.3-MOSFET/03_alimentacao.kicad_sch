@@ -2915,12 +2915,6 @@
 		(uuid "4d79eba0-7502-4212-8b46-3e4d13ccd6c0")
 	)
 	(junction
-		(at 101.6 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "69bc3fed-99c5-44a3-8331-3c898242780c")
-	)
-	(junction
 		(at 172.72 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3026,16 +3020,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 144.78) (xy 100.33 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f69033c-d880-4025-bbfc-f6956b17b4db")
-	)
-	(wire
-		(pts
 			(xy 55.88 63.5) (xy 55.88 67.31)
 		)
 		(stroke
@@ -3073,16 +3057,6 @@
 			(type default)
 		)
 		(uuid "32079882-f520-4082-b9d4-16b84752350d")
-	)
-	(wire
-		(pts
-			(xy 100.33 146.05) (xy 101.6 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34641905-b50a-422f-a54a-30eb7e55e4a7")
 	)
 	(wire
 		(pts
@@ -3253,26 +3227,6 @@
 			(type default)
 		)
 		(uuid "7ac0c7a7-7648-4636-bd23-17a2aecf2ac1")
-	)
-	(wire
-		(pts
-			(xy 102.87 146.05) (xy 102.87 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "893fefdb-8043-4fb7-ac4b-653a5a601859")
-	)
-	(wire
-		(pts
-			(xy 101.6 146.05) (xy 102.87 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8a3c1af9-bc23-4e94-8517-c1f15ad18dfd")
 	)
 	(wire
 		(pts
@@ -3716,7 +3670,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 101.6 146.05 0)
+		(at 101.6 149.86 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3726,7 +3680,7 @@
 		(dnp no)
 		(uuid "0f510395-e256-48c5-bcfd-2055d05ee85f")
 		(property "Reference" "#PWR0318"
-			(at 101.6 139.7 0)
+			(at 101.6 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3737,7 +3691,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 101.6 149.86 0)
+			(at 101.6 153.67 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3747,7 +3701,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 101.6 146.05 0)
+			(at 101.6 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3758,7 +3712,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 101.6 146.05 0)
+			(at 101.6 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3769,7 +3723,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 101.6 146.05 0)
+			(at 101.6 149.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7801,8 +7755,8 @@
 		)
 	)
 	(symbol
-		(lib_id "EBM7_V23_proyecto2:MCP1824ST-3302E")
-		(at 101.6 139.7 0)
+		(lib_id "Regulator_Linear:SPX3819M5-L-3-3")
+		(at 101.6 142.24 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7821,7 +7775,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP1824ST-3302E/DB"
+		(property "Value" "SPX3819M5-L-3-3/TR"
 			(at 101.6 135.89 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7831,7 +7785,7 @@
 				)
 			)
 		)
-		(property "Footprint" "EBM7_V23:SOT-223-3"
+		(property "Footprint" "EBM7_V23:SOT-23-5"
 			(at 101.6 139.7 0)
 			(hide yes)
 			(show_name no)
@@ -7863,7 +7817,7 @@
 				)
 			)
 		)
-		(property "MPN" "MCP1824ST-3302E/DB"
+		(property "MPN" "SPX3819M5-L-3-3/TR"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -7875,16 +7829,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "7d88c417-c383-4a7b-aa01-b1f95c539af3")
-		)
-		(pin "3"
-			(uuid "785df827-21cc-4b49-9e71-723dbf2f9c5c")
-		)
-		(pin "4"
-			(uuid "ac7f163e-4e92-4a2c-b642-c0a8e29ea38d")
+			(uuid "17bbcbaa-8dc3-499d-b00d-9064303b1cd9")
 		)
 		(pin "2"
-			(uuid "78035857-e41c-40bc-9b1b-ae35b1a16148")
+			(uuid "8cf9ff5b-a94f-44d0-be08-50885e7fdb9d")
+		)
+		(pin "3"
+			(uuid "ed0d8e36-0e42-4c4e-8983-3fde5d1d9171")
+		)
+		(pin "4"
+			(uuid "13b895ab-dc31-4fbd-ac39-f2096fd4b2cd")
+		)
+		(pin "5"
+			(uuid "857ab745-df85-479b-bc2d-bca44a093b27")
 		)
 		(instances
 			(project "IC2S-EBM7-2608-V2.3-MOSFET"
@@ -8552,6 +8509,66 @@
 				)
 			)
 		)
+	)
+	(wire
+		(pts
+			(xy 91.44 139.7) (xy 92.71 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f969c422-9682-488f-86d3-4d43bf04789d")
+	)
+	(wire
+		(pts
+			(xy 92.71 139.7) (xy 93.98 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4aa3ecdf-81fe-4256-8dec-dc9f31268116")
+	)
+	(wire
+		(pts
+			(xy 93.98 142.24) (xy 92.71 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "725e4c1b-6389-49a9-b04c-875120b15722")
+	)
+	(wire
+		(pts
+			(xy 92.71 142.24) (xy 92.71 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "383d25f8-8966-4c43-8892-927f0c1bc2ca")
+	)
+	(wire
+		(pts
+			(xy 109.22 139.7) (xy 111.76 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44709d16-c73a-4279-9563-43466537f01d")
+	)
+	(junction
+		(at 92.71 139.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f48b1160-7efa-481e-b85b-574820eeb7f3")
+	)
+	(no_connect
+		(at 109.22 142.24)
+		(uuid "a539141a-1919-42cc-babd-dd94dba3b94e")
 	)
 	(sheet_instances
 		(path "/"
