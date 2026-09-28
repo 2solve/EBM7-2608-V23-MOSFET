@@ -123,7 +123,7 @@ bus e o TVS do borne) e um surto forte abre-o. Aqui:
 | **Ramo único de 24 V**: saem F2, D1 e C1; F1 + D5 alimentam o U3 e o +24V_ADC; +24V_REG deixa de existir | reunião: é tudo alimentado pelos mesmos 24 V, não eram canais independentes nem isolados; ganha-se espaço |
 | 100 nF fora do 24 V → TDK C1608X7R1H104K080AA (50 V), 24 peças; o C6 (+24V_ADC) fica GRM188R72A104KA35D (100 V) | 100 V estava sobredimensionado; pior caso fora do 24 V é o +12V_TPS a 31,7 V, por isso 50 V e não 25 V |
 | 1 µF → TDK C1608X7R1H105K080AB (50 V) nos quatro | havia dois MPN para a mesma função |
-| U8 MCP1824ST (SOT-223) → SPX3819 (SOT-23-5); faltam rotear 6 ligações do U8 | mesmo MPN do U4 (`alteracao_LDO_3V3_lado_PLC_2026-09-28.md`) |
+| U8 MCP1824ST (SOT-223) → SPX3819 (SOT-23-5); faltam rotear as ligações do U8 e do C61 (2,2 µF na saída, como a V2.2) | mesmo MPN do U4 (`alteracao_LDO_3V3_lado_PLC_2026-09-28.md`) |
 
 Condensadores: folha 2, nota 14. O catálogo TDK usado está em `Documentos_de_Referência-…/TDK_mlcc_commercial_general_en.pdf`
 (p.34 para o 100 nF, p.35 para o 1 µF).
