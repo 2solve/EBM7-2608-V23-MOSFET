@@ -15,7 +15,7 @@ Identificador desta versão: **`IC2S-EBM7-2608-V2.3-MOSFET`**.
 
 ---
 
-## Estado (25-09-2026)
+## Estado (28-09-2026)
 
 | Verificação | Resultado |
 |---|---|
@@ -40,10 +40,10 @@ Desenvolvimento_IC2S-EBM7-2608-V2.3-MOSFET/
 │   ├── IC2S-EBM7-2608-V2.3-MOSFET.kicad_pro / .kicad_sch / .kicad_pcb / .kicad_dru
 │   ├── 01_conectores … 08_ntc.kicad_sch          (as oito folhas)
 │   ├── footprints/EBM7_V23.pretty, symbols/       (bibliotecas locais, por ${KIPRJMOD})
-│   ├── Documentos_de_Referência-…/                (33 datasheets das peças desta placa)
+│   ├── Documentos_de_Referência-…/                (33 datasheets + catálogo TDK de MLCC)
 │   └── Outputs/drc_report.json
 ├── Documentos_IC2S-EBM7-2608-V2.3-MOSFET/
-│   ├── 00-Especificações_Técnicas_…/   registo das alterações de 25-09
+│   ├── 00-Especificações_Técnicas_…/   registos das alterações (25-09 e 28-09)
 │   ├── 01-Esquemáticos_…/              Schematic-….pdf, ….step, …-Top_View.pdf, …-Bottom_View.pdf
 │   ├── 02-Pinout_…/                    (vazio)
 │   └── 03-Diagrama_Blocos_…/           (vazio)
@@ -61,9 +61,9 @@ Os blocos seguintes são os mesmos da fixa (lá estão explicados em detalhe); a
 
 | Bloco | Nesta placa |
 |---|---|
-| Entrada 24 V | fusíveis F1/F2 CC12H750MA, TVS **D200** SMA6J33A-Q (clamp real 53,3 V), díodo de entrada **D1** MBR1H100SF, C1/C13 10 µF/100 V |
+| Entrada 24 V | **ramo único** (28-09-2026, folha 2, nota 13): TVS **D200** SMA6J33A-Q (clamp real 53,3 V) → fusível **F1** CC12H750MA → díodo **D5** MBR1H100SF → +24V_ADC; **C13** 10 µF/100 V na entrada do U3 (Recom p.4 pede 3,3 µF/100 V se Vin > 50 V) |
 | Massas | GND_24V fundido em GND_ADC (folha 2, nota 7); DGND é a massa do processador |
-| Alimentação | **U3** R-78HB5.0 (24→5 V), **U4** SPX3819 (+3.3V_ANA), **U8** MCP1824 (+3.3V do lado PLC), **U14** TL431 que grampeia o +3.3V_ANA a ~3,6 V (folha 3, nota 14) |
+| Alimentação | **U3** R-78HB5.0 (+24V_ADC → 5 V), **U4** SPX3819 (+3.3V_ANA), **U8** MCP1824 (+3.3V do lado PLC), **U14** TL431 que grampeia o +3.3V_ANA a ~3,6 V (folha 3, nota 14) |
 | Barreira | **U5** ISO7141: separação de ruído, não isolamento (folha 4, nota 1); regra de 1,0 mm e keepouts no PCB |
 | ADC | **U6** AD7124-8, referência **U7** ADR4525 2,5 V no REFIN2 (folha 5, nota 1) |
 | Protector dos laços | **U9-U12** TPS26613, +Vs a 12 V de **U15** TPS7A4001 (folha 6, notas 9 e 16) |
@@ -116,6 +116,17 @@ bus e o TVS do borne) e um surto forte abre-o. Aqui:
 - o **SMBJ51A** (V_BR ≥ 56,7 V) não conduz nos surtos do bus, porque o TVS de entrada D200 grampeia a ≤ 53,3 V;
 - assim a corrente de clamp **nunca passa pelo fusível**. Custo: ~0,5 V de queda na alimentação do sensor.
 
+## Alterações de 28-09-2026 (reunião)
+
+| O quê | Porquê |
+|---|---|
+| **Ramo único de 24 V**: saem F2, D1 e C1; F1 + D5 alimentam o U3 e o +24V_ADC; +24V_REG deixa de existir | reunião: é tudo alimentado pelos mesmos 24 V, não eram canais independentes nem isolados; ganha-se espaço |
+| 100 nF fora do 24 V → TDK C1608X7R1H104K080AA (50 V), 24 peças; o C6 (+24V_ADC) fica GRM188R72A104KA35D (100 V) | 100 V estava sobredimensionado; pior caso fora do 24 V é o +12V_TPS a 31,7 V, por isso 50 V e não 25 V |
+| 1 µF → TDK C1608X7R1H105K080AB (50 V) nos quatro | havia dois MPN para a mesma função |
+
+Condensadores: folha 2, nota 14. O catálogo TDK usado está em `Documentos_de_Referência-…/TDK_mlcc_commercial_general_en.pdf`
+(p.34 para o 100 nF, p.35 para o 1 µF).
+
 ## Outras diferenças
 
 - **C56 = 10 µF / 100 V em 1210** (GRM32EC72A106ME05L): condensador de entrada do U15 junto ao pino (SBVS162B pede > 1 µF
@@ -148,6 +159,7 @@ Em `Documentos_…/00-Especificações_Técnicas_IC2S-EBM7-2608-V2.3-MOSFET/`:
 | Ficheiro | Conteúdo |
 |---|---|
 | `alteracoes_esquematico_e_PCB_2026-09-25.md` | registo das alterações de 25-09: modo duplo reposto, correcções vindas da fixa, verificação do FDN337N/MMSZ4702, importação e colocação da PCB |
+| `alteracoes_reuniao_2026-09-28.md` | revisão da reunião de 28-09: ramo único de 24 V, entrada do R-78HB, tensão dos 100 nF, MPN do 1 µF |
 
 ---
 
@@ -160,6 +172,6 @@ Em `Documentos_…/00-Especificações_Técnicas_IC2S-EBM7-2608-V2.3-MOSFET/`:
 - Serigrafia (67 avisos).
 - Gerar Gerbers, BOM, pick-and-place e stencil quando a placa estiver roteada.
 - Datasheets em falta: SMBJ51A-13-F (Diodes), MBR1H100SFT3G (onsemi), BLM18PG471SN1D (Murata), LED KG EELP41.22,
-  TDK C3216X5R1H106K, resistências genéricas.
+  resistências genéricas.
 - Revisão independente do roteamento (`2shw-pcb:check-roteamento`) antes de fabricar.
 - O mecanismo da avaria em campo da V2.2 não foi medido (G8).

@@ -2734,7 +2734,7 @@
 		)
 		(uuid "af53fd5d-12a2-4f4f-9632-a9e8db5d4b36")
 	)
-	(text "1. Cadeia analogica: +24V_REG > U3 K78U05 > +5V_REG >"
+	(text "1. Cadeia analogica: +24V_ADC > U3 K78U05 > +5V_REG >"
 		(exclude_from_sim no)
 		(at 35.56 102.87 0)
 		(effects
@@ -5110,7 +5110,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 146.05 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5152,7 +5152,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM188R72A104KA35D"
+		(property "MPN" "C1608X7R1H104K080AA"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -5795,7 +5795,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 166.37 72.39 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5837,7 +5837,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM188R72A104KA35D"
+		(property "MPN" "C1608X7R1H104K080AA"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -6368,7 +6368,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 62.738 73.914 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6410,7 +6410,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM188R72A104KA35D"
+		(property "MPN" "C1608X7R1H104K080AA"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -6547,7 +6547,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 127 147.955 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6590,7 +6590,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM188R72A104KA35D"
+		(property "MPN" "C1608X7R1H104K080AA"
 			(at 0 0 0)
 			(hide yes)
 			(show_name no)
@@ -7593,7 +7593,7 @@
 				)
 			)
 		)
-		(property "Value" "+24V_REG"
+		(property "Value" "+24V_ADC"
 			(at 30.48 58.42 0)
 			(show_name no)
 			(do_not_autoplace no)

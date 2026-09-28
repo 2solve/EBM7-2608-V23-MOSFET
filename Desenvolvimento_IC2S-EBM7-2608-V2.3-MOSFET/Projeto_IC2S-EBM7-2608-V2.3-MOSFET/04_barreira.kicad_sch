@@ -1868,7 +1868,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 135.89 62.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1911,7 +1911,7 @@
 				)
 			)
 		)
-		(property "MPN" "GRM188R72A104KA35D"
+		(property "MPN" "C1608X7R1H104K080AA"
 			(at 6.35 0 0)
 			(hide yes)
 			(show_name no)
